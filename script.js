@@ -37,3 +37,15 @@ function intermediateExample1(arr) {
 }
 intermediateExample1([1,2,3,4,5]);
 
+function LongestString(stringArray) {
+    let longStr = "";
+    for (i = 0; i < stringArray.length; i++) {
+        const currentStr = stringArray[i];
+        if (currentStr.length > longStr.length) {
+            longStr = currentStr;
+        }
+    }
+    console.log(longStr);
+}
+let arrayStr = ['apple', 'watermelon', 'peach', 'grapes', 'mango'];
+LongestString(arrayStr);
