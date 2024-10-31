@@ -8,5 +8,5 @@ function LongestString(stringArray) {
     }
     console.log(longStr);
 }
-let arrayStr = ['apple', 'watermelon', 'peach', 'grapes', 'mango'];
+let arrayStr = ['apple', 'watermelon', 'peach', 'grapes', 'mango', 'pineapple'];
 LongestString(arrayStr);
