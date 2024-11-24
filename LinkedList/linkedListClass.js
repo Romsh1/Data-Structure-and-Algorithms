@@ -46,6 +46,25 @@ class LinkedList {
         this.size++
     }
 
+    insert(value, index) {
+        if(index < 0 || index > this.size) {
+            return
+        }
+        //inserting node at the beginning of the list
+        if (index === 0) {
+            this.prepend(value)
+        } else {
+            const node = new Node(value)
+            let prev = this.head
+            for (let i = 0; i < index - 1; i++) {
+                prev = prev.next
+            }
+            node.next = prev.next
+            prev.next = node
+            this.size++
+        }
+    }
+
     print() {
         if(this.isEmpty()) {
             console.log(`The list is empty`)
@@ -65,9 +84,14 @@ const linkedList = new LinkedList()
 console.log(linkedList.isEmpty())
 console.log(linkedList.getSize())
 linkedList.print()
-linkedList.append(10)
-linkedList.print()
-linkedList.append(20)
-linkedList.append(30)
-linkedList.print()
+// linkedList.append(10)
+// linkedList.print()
+// linkedList.append(20)
+// linkedList.append(30)
+// linkedList.print()
 
+linkedList.insert(10, 0)
+linkedList.insert(30, 1)
+linkedList.insert(40, 2)
+linkedList.insert(20, 0)
+linkedList.print()
