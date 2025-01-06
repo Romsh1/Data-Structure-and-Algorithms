@@ -1,17 +1,43 @@
+
+
+
+// function quickSort(arr) {
+//     if (arr.length < 2) {
+//         return arr
+//     }
+//     let pivot = arr[arr.length - 1]
+//     let leftArr = []
+//     let rightArr = []
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         if(arr[i] < pivot) {
+//             leftArr.push(arr[i])
+//         }else{
+//             rightArr.push(arr[i])
+//         }
+//     }
+//     return [...quickSort(leftArr), pivot, ...quickSort(rightArr)]
+// }
+
+
+
 function quickSort(arr) {
     if (arr.length < 2) {
-        return arr
+        return arr;
     }
-    let pivot = arr[arr.length - 1]
-    let leftArr = []
-    let rightArr = []
-    for (let i = 0; i < arr.length - 1; i++) {
-        if(arr[i] < pivot) {
-            leftArr.push(arr[i])
-        }else{
-            rightArr.push(arr[i])
+
+    let n = arr.length - 1;
+    let pivot = arr[n];
+    let leftArr = [];
+    let rightArr = [];
+
+    for (let i = 0; i < n; i++) {
+        if (arr[i] < pivot) {
+            leftArr.push(arr[i]);
+        } else {
+            rightArr.push(arr[i]);
         }
     }
+
     return [...quickSort(leftArr), pivot, ...quickSort(rightArr)]
 }
 
