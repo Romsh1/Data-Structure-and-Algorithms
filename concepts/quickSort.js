@@ -61,33 +61,27 @@ class Solution {
     partition(arr, low, high) {
         // Your code here
         let pivot = arr[high];
-        
-        //starting index for i from -1
         let i = low - 1;
         
-        //traversing through each element
+        //traversing through array elements
         for (let j = low; j < high; j++) {
-            if (arr[j] < pivot) {
+            if(arr[j] < pivot) {
                 i++;
-                //swapping
                 [arr[i], arr[j]] = [arr[j], arr[i]];
             }
         }
-        
-        [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
-        return i + 1; //returning index
-        
+
+        //swapping pivot elemnt to its sorted place and returning its index
+        [arr[i+1], arr[high]] = [arr[high], arr[i + 1]];
+        return i + 1;
     }
     
-
     quickSort(arr, low, high) {
         if (low < high) {
+            let pivotIndex = quickSort(arr, low, high);
 
-        // pi is the partition return index of pivot
-        let pi = this.partition(arr, low, high);
-
-        this.quickSort(arr, low, pi - 1);
-        this.quickSort(arr, pi + 1, high);
+            this.quickSort(arr, low, pivotIndex - 1);
+            this.quickSort(arr, pi + 1, high);
         }
     }
 
